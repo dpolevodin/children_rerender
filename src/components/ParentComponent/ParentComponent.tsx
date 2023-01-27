@@ -37,3 +37,22 @@ export const ParentComponent: FC<Props> = () => {
     </div>
   </>
 }
+
+
+/** Другой вариант передачи children */
+// export const ParentComponent: FC<Props> = (props) => {
+//   const [coordinates, setCoordinates] = useState(initialPosition)
+//
+//   const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+//     setCoordinates({ x: event.clientX, y: event.clientY })
+//   }
+//
+//   return <>
+//     <div
+//       className="App-parent"
+//       onMouseMove={handleMouseMove}
+//     >
+//       {props.children}
+//     </div>
+//   </>
+// }
