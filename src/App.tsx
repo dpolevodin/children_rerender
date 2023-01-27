@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import {ParentComponent} from "./components/ParentComponent";
-import {ChildrenComponent} from "./components/ChildrenComponent";
 
 export const App = () => {
   return (
@@ -11,9 +10,8 @@ export const App = () => {
           Повторный рендеринг вложенных компонентов или магия <code>'{'children'}'</code>
         </p>
       </header>
-      <ParentComponent>
-        <ChildrenComponent/>
-      </ParentComponent>
+
+      <ParentComponent />
     </div>
   );
 }
