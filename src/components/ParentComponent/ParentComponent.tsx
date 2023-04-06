@@ -16,12 +16,14 @@ const initialPosition: Coordinates = {
   y: 0
 }
 
-export const ParentComponent: FC<Props> = () => {
+export const ParentComponent: FC<Props> = ({children}) => {
   const [coordinates, setCoordinates] = useState(initialPosition)
 
   const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
     setCoordinates({ x: event.clientX, y: event.clientY })
   }
+
+  console.log(coordinates)
 
   return <>
     <div
@@ -32,14 +34,13 @@ export const ParentComponent: FC<Props> = () => {
       <OtherTextComponent x={coordinates.x} y={coordinates.y}/>
 
       {/** Вложенный компонент, который не зависит от props-ов родителя (Children) */}
-      <ChildrenComponent />
-
+      <ChildrenComponent x={coordinates.x ?? 0} y={coordinates.y ?? 0}/>
     </div>
   </>
 }
 
 
-/** Другой вариант передачи children */
+// /** Другой вариант передачи children */
 // export const ParentComponent: FC<Props> = (props) => {
 //   const [coordinates, setCoordinates] = useState(initialPosition)
 //

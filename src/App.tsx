@@ -11,7 +11,7 @@ export const App = () => {
         </p>
       </header>
 
-      <ParentComponent />
+      <ParentComponent/>
     </div>
   );
 }
